@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from "axios";
+import Character from "./components/Character"
 import './App.css'
 
 
@@ -16,7 +17,7 @@ const App = () => {
  // setIsFetching(true);
   axios.get(api)
   .then(response =>
-    console.log(response),
+    setCharacters(response.data.results)
   //  setIsFetching(false)
     )
   .catch(error => {
@@ -31,7 +32,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
+      <h1 className="Header">Welcome, young padawan</h1>
+      <Character list={characters} />
     </div>
   );
 }
