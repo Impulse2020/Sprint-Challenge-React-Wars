@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from "axios";
+import styled from 'styled-components';
 import Character from "./components/Character"
 import './App.css'
 
@@ -27,17 +28,31 @@ const App = () => {
         setIsFetching(false);
   })
   } 
-
-
+  const AppDiv = styled.div`
+  display:flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column;
+  .sc-AxjAm:hover{
+    background-color:tan;
+  }`;
+  const Header = styled.h1`text-align:center;
+  width:100%;
+  height:10vh;
+  top-padding:0px;
+  top-margin:0px;
+  font-size:3rem;
+  color:white;
+  -webkit-text-stroke: 3px blue;`;
 
 
 
 
   return (
-    <div className="App">
-      <h1 className="Header">Welcome, young padawan</h1>
+    <AppDiv>
+      <Header>Welcome, young padawan</Header>
       <Character list={characters} error={ErrorState} fetching={isFetching} getCharacters={getCharacters} />
-    </div>
+    </AppDiv>
   );
 }
 
