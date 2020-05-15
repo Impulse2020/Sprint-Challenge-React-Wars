@@ -6,19 +6,22 @@ const Character = props =>{
         event.preventDefault();
         props.getCharacters();
         
-    }
 
+   }
+  
+ 
 console.log(props.list)
 return(
 <div>
     {props.error ? (<h3>{props.error}</h3>) : (
 
         props.list.map(character => (
-            <div key={character.name}>
-                <h1>{character.name}</h1>
-
-
-
+            
+            <div key={character.name} >
+                <h1>Name : {character.name}</h1>
+                <h3>Gender : {character.gender}</h3>
+                <p> Hair color: {character.hair_color} Height: {character.height} Mass:{character.mass}</p>
+                <p> Birth Year: {character.birth_year}</p>
             </div>
         ))
 
