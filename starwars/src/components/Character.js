@@ -1,12 +1,12 @@
 // Write your Character component here
 import React from "react";
 
-const Character = (props) =>{
+const Character = props =>{
     const handleGetCharacters = event =>{
         event.preventDefault();
-        props.GetCharacters();
+        props.getCharacters();
     }
-console.log(Character)
+
 return(
 
 

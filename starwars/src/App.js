@@ -13,10 +13,10 @@ const App = () => {
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
- const getCharacters = event => {
+ const getCharacters = (event) => {
  
   const api = 'https://swapi.py4e.com/api/people/';
- setIsFetching(true);
+  setIsFetching(true);
   axios.get(api)
   .then(response =>
     setCharacters(response.data.results), setIsFetching(false)
