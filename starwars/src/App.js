@@ -22,7 +22,9 @@ const App = () => {
     setCharacters(response.data.results), setIsFetching(false)
     )
   .catch(error => {
-
+    console.log(`Error message: ${error}`);
+        setErrorState(`${error}`);
+        setIsFetching(false);
   })
   } 
 
@@ -34,7 +36,7 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Welcome, young padawan</h1>
-      <Character list={characters} getCharacters={getCharacters} />
+      <Character list={characters} error={ErrorState} fetching={isFetching} getCharacters={getCharacters} />
     </div>
   );
 }
